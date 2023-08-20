@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import CounterFunction from './counter-fn'
 import { ExampleUseEfect } from './exampleUseEfect'
+import SlowList from './hooks/deferredValue'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -41,6 +42,9 @@ function App() {
       <div>
         {isVisible && <ExampleUseEfect/>}
         <button onClick={()=>{setIsVisible(!isVisible)}}>clique aqui para esconder</button>
+      </div>
+      <div>
+        <SlowList />
       </div>
     </>
   )
