@@ -3,9 +3,11 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import CounterFunction from './counter-fn'
+import { ExampleUseEfect } from './exampleUseEfect'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
   return (
     <>
@@ -32,6 +34,13 @@ function App() {
       </p>
       <div>
         <CounterFunction />
+      </div>
+      <p className="read-the-docs">
+       Exemplo de um ciclo de vida de um componente utilzizando useEffect
+      </p>
+      <div>
+        {isVisible && <ExampleUseEfect/>}
+        <button onClick={()=>{setIsVisible(!isVisible)}}>clique aqui para esconder</button>
       </div>
     </>
   )
